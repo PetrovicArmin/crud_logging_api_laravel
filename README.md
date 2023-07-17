@@ -7,6 +7,15 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Project functionalities
+
+* CRUD operations for products and sku tables
+* ORM mapping with one to many relationship between products and skus
+* Authentication with password and email
+* Personal access tokens issuing with abilities
+* Authorization of users per resources with token abilities
+* Paging for large payloads of products and skus search! 
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
