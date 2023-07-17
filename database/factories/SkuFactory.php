@@ -19,7 +19,7 @@ class SkuFactory extends Factory
         return [
             'weight' => rand(1, 1000) / 100.0,
             'color' => fake()->colorname(),
-            'skuCode' => fake()->uuid(),
+            'skuCode' => fake()->asciify('********'),
             'productId' => rand(1,20),
             'countryOfOrigin' => fake()->country(),
             'price' => rand(1,1000) / 100.0,

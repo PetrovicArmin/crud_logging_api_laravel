@@ -22,12 +22,12 @@ class StoreSkuRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'weight' => 'decimal|gte:0',
+            'weight' => 'numeric|gte:0',
             'color' => 'alpha',
-            'skuCode' => 'required|unique:skus|uuid|size:8',
+            'skuCode' => 'required|unique:skus|string|size:8',
             'productId' => 'required|exists:products,id',
             'countryOfOrigin' => 'alpha',
-            'price' => 'required|decimal|gte:0',
+            'price' => 'required|numeric|gte:0',
             'quantityInStock' => 'required|integer|gte:0'
         ];
     }

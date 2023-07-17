@@ -11,7 +11,7 @@ class UpdateSkuRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,11 +22,11 @@ class UpdateSkuRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'weight' => 'decimal|gte:0',
+            'weight' => 'numeric|gte:0',
             'color' => 'alpha',
             'productId' => 'exists:products,id',
             'countryOfOrigin' => 'alpha',
-            'price' => 'decimal|gte:0',
+            'price' => 'numeric|gte:0',
             'quantityInStock' => 'integer|gte:0'
         ];
     }
