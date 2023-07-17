@@ -19,6 +19,7 @@
 * Using UpdateRequest, InsertRequest, and SearchRequest objects per api resource
 * Using indexes and foregin key generation through migrations
 * Logging of api request/response communication for monitoring and optimization
+* Parameter validation and error handling in all of the requests using laravel Validator options
 
 ## About Laravel
 
