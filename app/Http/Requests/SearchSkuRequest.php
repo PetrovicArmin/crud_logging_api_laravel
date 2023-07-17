@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SearchProductRequest extends FormRequest
+class SearchSkuRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,6 +27,6 @@ class SearchProductRequest extends FormRequest
 
     //these are the only fields that we are allowed to search by
     public function getSearchRequest(): array {
-        return $this->only(['id', 'name', 'productType']);
+        return $this->only(['id', 'skuCode', 'productId', 'price', 'quantityInStock']);
     }
 }
