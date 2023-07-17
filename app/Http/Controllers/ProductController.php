@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchProductRequest;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Http\Resources\ProductResource;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(SearchProductRequest $request)
     {
-        //
+        return ProductResource::collection(Product::where($request->getSearchRequest())->paginate(10));
     }
 
     /**
@@ -29,7 +31,11 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        $parameters = $request->validated();
+
+        $product = Product::create($parameters);
+
+        return $product;
     }
 
     /**
@@ -37,7 +43,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return ProductResource::make($product);
     }
 
     /**
@@ -53,7 +59,11 @@ class ProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        $parameters = $request->validated();
+
+        $product->update($parameters);
+
+        return ProductResource::make($product);
     }
 
     /**
@@ -61,6 +71,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return response()->noContent();
     }
 }

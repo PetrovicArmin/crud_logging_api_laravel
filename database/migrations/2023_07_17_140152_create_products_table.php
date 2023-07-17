@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\ProductType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,9 +16,9 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name')->nullable(false)->unique('nameIndex');
-            $table->string('summary');
-            $table->string('details');
-            $table->string('productType')->index('productTypeIndex')->nullable(false);
+            $table->string('summary')->nullable(true);
+            $table->string('details')->nullable(true);
+            $table->enum('productType', ProductType::names())->index('productTypeIndex')->nullable(false);
         });
     }
 

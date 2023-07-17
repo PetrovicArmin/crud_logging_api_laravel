@@ -13,6 +13,6 @@ class Product extends Model
         'name',
         'summary',
         'details',
-        'type'
+        'productType'
     ];
 }

@@ -21,7 +21,7 @@ class ProductFactory extends Factory
             'name' => "Product of: " . fake()->name(),
             'summary' => fake()->paragraph(),
             'details' => fake()->paragraph(1),
-            'type' => ProductType::randomName(),
+            'productType' => ProductType::randomName(),
         ];
     }
 }

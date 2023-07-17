@@ -24,8 +24,10 @@ class UpdateProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => "required|unique:products",
-            "type" => ['required', new Enum(ProductType::class)]
+            "name" => "unique:products",
+            "productType" => [new Enum(ProductType::class)],
+            "summary" => [],
+            "details" => []
         ];
     }
 }

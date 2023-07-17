@@ -2,11 +2,9 @@
 
 namespace App\Http\Requests;
 
-use App\Models\ProductType;
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rules\Enum;
 
-class StoreProductRequest extends FormRequest
+class SearchProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +22,13 @@ class StoreProductRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "name" => "required|unique:products",
-            "productType" => ['required', new Enum(ProductType::class)]
         ];
+    }
+
+    //these are the only fields that we are allowed to search by
+    public function getSearchRequest(): array {
+        $queryArray = [];
+
+        return $this->only(['id', 'name', 'productType']);
     }
 }
