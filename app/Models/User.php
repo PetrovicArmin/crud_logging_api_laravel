@@ -42,4 +42,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function getAccessibility(): string {
+        switch($this->userType) {
+            case UserType::ADMIN: 
+                return 'all';
+            default:
+                return 'read';
+        }
+    }
 }

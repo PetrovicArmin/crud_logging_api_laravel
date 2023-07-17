@@ -19,7 +19,7 @@ class SkuResource extends JsonResource
             'weight' => $this->weight,
             'color' => $this->color,
             'skuCode' => $this->skuCode,
-            'productId' => $this->productId,
+            'product' => $this->product,
             'countryOfOrigin' => $this->countryOfOrigin,
             'price' => $this->price,
             'quantityInStock' => $this->quantityInStock,
