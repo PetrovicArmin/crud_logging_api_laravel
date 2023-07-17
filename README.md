@@ -15,6 +15,10 @@
 * Personal access tokens issuing with abilities
 * Authorization of users per resources with token abilities
 * Paging for large payloads of products and skus search! 
+* Using migrations and seeders in production environment
+* Using UpdateRequest, InsertRequest, and SearchRequest objects per api resource
+* Using indexes and foregin key generation through migrations
+* Logging of api request/response communication for monitoring and optimization
 
 ## About Laravel
 
