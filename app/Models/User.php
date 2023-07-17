@@ -45,7 +45,7 @@ class User extends Authenticatable
 
     public function getAccessibility(): string {
         switch($this->userType) {
-            case UserType::ADMIN: 
+            case('ADMIN'): 
                 return 'all';
             default:
                 return 'read';
